@@ -1,0 +1,100 @@
+@use "../../../../shared/styles/variables";
+
+.list-element {
+  &__container {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+    background-color: variables.$white-color;
+    border-radius: variables.$border-radius;
+    box-shadow: variables.$box-shadow;
+    height: 11rem;
+    padding: 0.5rem;
+  }
+
+  &__img-container {
+    width: 18rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__img {
+    width: 14rem;
+    margin: 1rem;
+    height: 7rem;
+  }
+
+  &__img-label {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: variables.$dark-blue-color;
+    align-self: center;
+    margin: 0 !important;
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+
+  &__data-part {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1.5rem;
+    width: 18rem;
+    color: variables.$dark-blue-color;
+    transform: translateY(10px);
+  }
+
+  &__data-header {
+    text-transform: uppercase;
+    align-self: flex-start;
+    font-weight: normal;
+    width: 10rem;
+  }
+
+  &__data-header-first-row {
+    text-transform: uppercase;
+    align-self: flex-start;
+    font-weight: normal;
+    width: 7rem;
+  }
+
+  &__data-content {
+    font-weight: bold;
+    align-self: flex-start;
+    width: 8rem;
+  }
+
+
+  &__sold {
+    width: 8rem;
+    height: 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: variables.$border-dark-blue;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px #00000040;
+    align-self: center;
+    justify-self: flex-start;
+    text-align: center;
+    line-height: 2rem;
+  }
+
+  &__remove {
+    width: 8rem;
+    height: 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: variables.$border-dark-blue;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px #00000040;
+    align-self: center;
+    justify-self:  flex-end;
+    text-align: center;
+    line-height: 2rem;
+  }
+}

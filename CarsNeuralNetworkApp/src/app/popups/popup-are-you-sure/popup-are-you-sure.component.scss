@@ -1,0 +1,49 @@
+@use "../../shared//styles/variables";
+
+.ays-popup{
+    &__container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    &__question{
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: variables.$dark-blue-color;
+        align-self: center;
+        margin-bottom: 4rem;
+        margin-top: 1rem;
+    }
+    &__button-yes{
+        justify-self: flex-start;
+        padding: 0.5rem;
+        width: 6rem;
+        height: 1.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        border: variables.$border-dark-blue;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px #00000040;
+        text-align: center;
+        line-height: 1.5rem;
+    }
+    &__button-no{
+        justify-self: flex-end;
+        width: 6rem;
+        padding: 0.5rem;
+        height: 1.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        border: variables.$border-dark-blue;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px #00000040;
+        text-align: center;
+        line-height: 1.5rem;
+    }
+}

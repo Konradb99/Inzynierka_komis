@@ -1,0 +1,13 @@
+@use "../../../shared/styles/buttons";
+@use "../../../shared/styles/cards";
+@use "../../../shared/styles/variables";
+
+.starter-page {
+  &__container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: variables.$negative-top-margin;
+    height: variables.$max-page-height;
+  }
+}

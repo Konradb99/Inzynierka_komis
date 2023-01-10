@@ -1,0 +1,12 @@
+@use "/src/app/shared/styles/variables";
+
+$toast-width: 25rem;
+
+.toast {
+  width: $toast-width;
+  box-shadow: 0px 3px 6px #4626534d;
+  border-radius: 20px !important;
+  margin-top: 5rem !important;
+  white-space: pre-wrap;
+  color: white;
+}

@@ -1,0 +1,42 @@
+@use "./variables";
+
+.button {
+  margin: 1rem;
+  width: variables.$button-width;
+  height: variables.$button-height;
+  border-radius: variables.$border-radius;
+  font-size: 2rem;
+  font-weight: bold;
+  border: variables.$border-dark-blue;
+  align-self: center;
+  color: variables.$white-color;
+  box-shadow: variables.$box-shadow;
+
+  &--primary {
+    @extend .button;
+    background-color: variables.$dark-blue-color;
+  }
+
+  &--primary:disabled {
+    @extend .button;
+    background-color: variables.$light-gray-color;
+    border-color: variables.$light-gray-color;
+    cursor: default;
+  }
+
+  &--secondary {
+    @extend .button;
+    box-shadow: none;
+    background-color: variables.$white-color;
+    color: variables.$dark-blue-color;
+  }
+
+  &--text {
+    background-color: variables.$white-color;
+    border: none;
+    color: variables.$dark-blue-color;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-top: 0.7rem;
+  }
+}

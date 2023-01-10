@@ -1,0 +1,39 @@
+<div class="register-page__container">
+  <div class="card">
+    <img class="card-logo-small" src="../../../../assets/logo.jpg" />
+    <form
+      [formGroup]="registerFormGroup!"
+      class="register-page__form"
+      autocomplete="off"
+    >
+      <input
+        type="text"
+        formControlName="username"
+        placeholder="LOGIN"
+        class="login-input"
+        autocomplete="off"
+      />
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="HASŁO"
+        class="login-input"
+        autocomplete="off"
+      />
+      <input
+        type="password"
+        formControlName="repeatPassword"
+        placeholder="POWTÓRZ HASŁO"
+        class="login-input"
+        autocomplete="off"
+      />
+    </form>
+    <button
+      class="button--primary"
+      (click)="register()"
+      [disabled]="!registerFormGroup!.valid"
+    >
+      UTWÓRZ KONTO
+    </button>
+  </div>
+</div>

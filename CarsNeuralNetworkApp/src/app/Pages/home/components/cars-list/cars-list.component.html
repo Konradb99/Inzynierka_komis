@@ -1,0 +1,16 @@
+<div
+  class="cars-list__container"
+  id="cars-list__scroll"
+  [scrollWindow]="false"
+  infinite-scroll
+  (scrolled)="loadNextPage()"
+>
+  <mat-list>
+    <div *ngIf="isPrediction()" class="cars-list__preffered-car">
+     Preferowany model samochodu : {{prefferedCar}}
+    </div>
+    <div *ngFor="let car of carsList" class="cars-list__element">
+      <app-list-element [car]="car"></app-list-element>
+    </div>
+  </mat-list>
+</div>

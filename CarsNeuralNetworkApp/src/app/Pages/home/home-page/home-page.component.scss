@@ -1,0 +1,9 @@
+@use "/src/app/Shared/styles/variables";
+
+.home-page {
+  &__container {
+    background-color: variables.$background-green;
+    display: flex;
+    flex-direction: column;
+  }
+}
