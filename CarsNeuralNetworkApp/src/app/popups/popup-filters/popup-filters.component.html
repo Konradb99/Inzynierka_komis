@@ -1,0 +1,267 @@
+<div class="filters-popup__container">
+  <form [formGroup]="filtersGroup" class="filters-popup__form">
+    <div class="filters-popup__form-column">
+      <div class="filters-popup__form-hint">
+        <label for="priceMin" class="filters-popup__form-label">CENA</label>
+        <div class="filters-popup__form-items-row">
+          <input
+            id="priceMin"
+            type="number"
+            formControlName="priceMin"
+            class="filters-popup__form-item"
+            placeholder="OD"
+            [matAutocomplete]="priceAutocomplete"
+            min='0'
+          />
+          <input
+            id="priceMax"
+            type="number"
+            formControlName="priceMax"
+            class="filters-popup__form-item"
+            placeholder="DO"
+            min='0'
+            [matAutocomplete]="priceAutocomplete"
+          />
+          <mat-autocomplete #priceAutocomplete="matAutocomplete">
+            <mat-option></mat-option>
+            <mat-option *ngFor="let price of prices" value="{{ price }}">{{
+              price
+            }}</mat-option>
+          </mat-autocomplete>
+        </div>
+        <mat-hint>Cena w pln</mat-hint>
+      </div>
+    </div>
+    <div class="filters-popup__form-column">
+      <div class="filters-popup__form-hint">
+        <label for="distanceMin" class="filters-popup__form-label"
+          >PRZEBIEG</label
+        >
+        <div class="filters-popup__form-items-row">
+          <input
+            id="distanceMin"
+            type="number"
+            formControlName="distanceMin"
+            class="filters-popup__form-item"
+            placeholder="OD"
+            min='0'
+          />
+          <input
+            id="distanceMax"
+            type="number"
+            formControlName="distanceMax"
+            class="filters-popup__form-item"
+            placeholder="DO"
+            min='0'
+          />
+        </div>
+        <mat-hint>Przebieg wyrażony w km</mat-hint>
+      </div>
+    </div>
+    <div class="filters-popup__form-column">
+      <div class="filters-popup__form-hint">
+        <label for="yearMin" class="filters-popup__form-label"
+          >ROK PRODUKCJI</label
+        >
+        <div class="filters-popup__form-items-row">
+          <input
+            id="yearMin"
+            type="number"
+            formControlName="yearMin"
+            class="filters-popup__form-item"
+            placeholder="OD"
+            min="1990"
+            max="2022"
+            [matAutocomplete]="yearAutocomplete"
+          />
+          <input
+            id="yearMax"
+            type="number"
+            formControlName="yearMax"
+            class="filters-popup__form-item"
+            placeholder="DO"
+            min="1990"
+            max="2022"
+            [matAutocomplete]="yearAutocomplete"
+          />
+          <mat-autocomplete #yearAutocomplete="matAutocomplete">
+            <mat-option></mat-option>
+            <mat-option *ngFor="let year of years" value="{{ year }}">{{
+              year
+            }}</mat-option>
+          </mat-autocomplete>
+        </div>
+      </div>
+    </div>
+    <div class="filters-popup__form-column">
+      <div class="filters-popup__form-hint">
+        <label for="capacityMin" class="filters-popup__form-label"
+          >POJEMNOŚĆ SILNIKA</label
+        >
+        <div class="filters-popup__form-items-row">
+          <input
+            id="capacityMin"
+            type="number"
+            formControlName="capacityMin"
+            class="filters-popup__form-item"
+            placeholder="OD"
+            min='0'
+          />
+          <input
+            id="capacityMax"
+            type="number"
+            formControlName="capacityMax"
+            class="filters-popup__form-item"
+            placeholder="DO"
+            min='0'
+          />
+        </div>
+        <mat-hint>Pojemność silnika wyrażona w cm<sup>3</sup></mat-hint>
+      </div>
+    </div>
+    <div class="filters-popup__form-column">
+      <div class="filters-popup__form-items-row-two-values">
+        <div class="filters-popup__form-hint">
+          <div class="filters-popup__form-item-with-label">
+            <label for="producer" class="filters-popup__form-label"
+              >MARKA</label
+            >
+            <mat-select
+              id="producer"
+              type="number"
+              formControlName="brand"
+              class="filters-popup__form-input"
+              placeholder="MARKA"
+              (selectionChange)="changeModelsOnBrandSelect()"
+            >
+              <mat-option></mat-option>
+              <mat-option *ngFor="let brand of brands" value="{{ brand }}">{{
+                brand
+              }}</mat-option>
+            </mat-select>
+          </div>
+        </div>
+        <div class="filters-popup__form-hint">
+          <div class="filters-popup__form-item-with-label">
+            <label for="model" class="filters-popup__form-label">MODEL</label>
+            <mat-select
+              id="model"
+              type="number"
+              formControlName="model"
+              class="filters-popup__form-input"
+              placeholder="MODEL"
+            >
+              <mat-option></mat-option>
+              <mat-option *ngFor="let model of models" value="{{ model }}">{{
+                model
+              }}</mat-option>
+            </mat-select>
+          </div>
+          <mat-hint>Modele pokażą się po wybraniu marki pojazdu</mat-hint>
+        </div>
+      </div>
+    </div>
+    <div class="filters-popup__form-column">
+      <div class="filters-popup__form-items-row-two-values">
+        <div class="filters-popup__form-hint">
+          <div class="filters-popup__form-item-with-label">
+            <label for="driveType" class="filters-popup__form-label"
+              >NAPĘD</label
+            >
+            <mat-select
+              id="driveType"
+              type="number"
+              formControlName="driveType"
+              class="filters-popup__form-input"
+              placeholder="NAPĘD"
+            >
+              <mat-option></mat-option>
+              <mat-option
+                *ngFor="let drive of driveTypes"
+                value="{{ drive }}"
+                >{{ drive }}</mat-option
+              >
+            </mat-select>
+          </div>
+        </div>
+        <div class="filters-popup__form-hint">
+          <div class="filters-popup__form-item-with-label">
+            <label for="gearboxType" class="filters-popup__form-label"
+              >SKRZYNIA BIEGÓW</label
+            >
+            <mat-select
+              id="gearboxType"
+              type="number"
+              formControlName="gearboxType"
+              class="filters-popup__form-input"
+              placeholder="SKRZYNIA BIEGÓW"
+            >
+              <mat-option></mat-option>
+              <mat-option
+                *ngFor="let gearbox of gearboxTypes"
+                value="{{ gearbox }}"
+                >{{ gearbox }}</mat-option
+              >
+            </mat-select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="filters-popup__last">
+      <div class="filters-popup__form-column">
+        <div class="filters-popup__form-items-row-two-values">
+          <div class="filters-popup__form-hint">
+            <div class="filters-popup__form-item-with-label">
+              <label for="fuelType" class="filters-popup__form-label"
+                >RODZAJ PALIWA</label
+              >
+              <mat-select
+                id="fuelType"
+                type="number"
+                formControlName="fuelType"
+                class="filters-popup__form-input"
+                placeholder="RODZAJ PALIWA"
+              >
+                <mat-option></mat-option>
+                <mat-option *ngFor="let fuel of fuelTypes" value="{{ fuel }}">{{
+                  fuel
+                }}</mat-option>
+              </mat-select>
+            </div>
+          </div>
+          <div class="filters-popup__form-hint">
+            <div class="filters-popup__form-item-with-label">
+              <label for="bodyType" class="filters-popup__form-label"
+                >TYP NADWOZIA</label
+              >
+              <mat-select
+                id="bodyType"
+                type="number"
+                formControlName="bodyType"
+                class="filters-popup__form-input"
+                placeholder="TYP NADWOZIA"
+              >
+                <mat-option></mat-option>
+                <mat-option *ngFor="let body of bodyTypes" value="{{ body }}">{{
+                  body
+                }}</mat-option>
+              </mat-select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="filters-popup__buttons">
+    <button
+      class="filters-popup__button--primary"
+      [disabled]="!filtersGroup.valid"
+      (click)="filterCars()"
+    >
+      ZATWIERDŹ
+    </button>
+    <button class="filters-popup__button--secondary" (click)="closeDialog()">
+      ANULUJ
+    </button>
+  </div>
+</div>

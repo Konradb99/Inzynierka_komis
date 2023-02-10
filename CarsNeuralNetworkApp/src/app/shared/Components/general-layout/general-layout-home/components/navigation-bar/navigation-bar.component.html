@@ -1,0 +1,12 @@
+<div class="navigation-bar__container">
+  <button *ngIf="isEmployee" class="button--secondary" (click)="openAddCarDialog()">
+    DODAJ AUTO
+  </button>
+  <button class="button--secondary" (click)="openAssistantDialog()">
+    ASYSTENT
+  </button>
+  <button class="button--secondary" (click)="openFiltersDialog()">
+    FILTRY
+  </button>
+  <button class="button--secondary" (click)="refreshCarsList()">WYCZYŚĆ</button>
+</div>

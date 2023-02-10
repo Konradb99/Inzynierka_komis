@@ -1,0 +1,28 @@
+@use "../../../styles/variables";
+
+.general-layout {
+  display: flex;
+  flex-direction: column;
+  height: calc(variables.$max-page-height - 1rem);
+
+  &__navbar {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__router {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__footer {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: variables.$dark-blue-color;
+    align-self: center;
+  }
+}
+
+.spacer {
+  flex-grow: 1;
+}

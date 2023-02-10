@@ -1,0 +1,36 @@
+@use "./variables";
+
+.card {
+  width: variables.$card-width;
+  height: variables.$card-height;
+  background-color: variables.$white-color;
+  display: flex;
+  flex-direction: column;
+  box-shadow: variables.$box-shadow;
+  border-radius: variables.$border-radius;
+}
+
+.card-logo {
+  width: variables.$big-logo-size;
+  height: variables.$big-logo-size;
+  object-fit: scale-down;
+  align-self: center;
+  padding: variables.$logo-padding;
+}
+
+.card-logo-small {
+  width: variables.$medium-logo-size;
+  height: variables.$medium-logo-size;
+  object-fit: scale-down;
+  align-self: center;
+  padding: variables.$logo-padding;
+}
+
+.card-error {
+  width: variables.$error-card-size;
+  height: variables.$error-card-size;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  border-radius: variables.$border-radius;
+}

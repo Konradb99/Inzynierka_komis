@@ -1,0 +1,33 @@
+<div class="header-component__container">
+  <img
+    src="../../../../../../assets/header-logo.png"
+    class="header-component__img"
+  />
+  <div *ngIf="isEmployee" class="header-component__prediction">
+    <form [formGroup]="predictionControl" class="header-component__form">
+      <div class="header-component__form-item">
+        <mat-select
+          id="predictionType"
+          formControlName="type"
+          class="header-component__form-input"
+          placeholder="TYP PREDYKCJI"
+        >
+          <mat-option></mat-option>
+          <mat-option
+            class="header-component__form-option"
+            *ngFor="let type of predictionTypes"
+            value="{{ type }}"
+            >{{ type }}</mat-option
+          >
+        </mat-select>
+      </div>
+    </form>
+  </div>
+  <div class="header-component__buttons">
+    <img
+      src="../../../../../../assets/logout.png"
+      class="header-component__button-img"
+      (click)="logout()"
+    />
+  </div>
+</div>

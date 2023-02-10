@@ -1,0 +1,11 @@
+@use "../../../shared/styles/cards";
+@use "../../../shared/styles/variables";
+
+.error-page {
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: variables.$max-page-height;
+  }
+}

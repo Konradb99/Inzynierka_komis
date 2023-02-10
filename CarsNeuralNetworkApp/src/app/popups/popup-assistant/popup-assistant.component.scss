@@ -1,0 +1,125 @@
+.assistant-popup {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding-top: 3rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2rem;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+  }
+
+  &__form-item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.3rem;
+  }
+
+  &__form-label {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+  }
+
+  &__form-input {
+    padding-left: 0.5rem;
+    width: 19rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    border: solid 2px #1e4147;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px #00000040;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+  }
+
+  &__form-hint {
+    height: 3.5rem;
+    margin-bottom: 2rem;
+  }
+
+  &__form-input-big {
+    padding-left: 0.5rem;
+    width: 38rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    border: solid 2px #1e4147;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px #00000040;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+  }
+
+  &__form-input::placeholder {
+    color: #1e4147 !important;
+  }
+
+  &__buttons {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    margin: auto;
+    margin-top: 5rem;
+    justify-content: space-evenly;
+  }
+
+  &__button {
+    width: 17rem;
+    height: 3.5rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+    border-radius: 10px;
+    border: solid 3px #1e4147;
+    box-shadow: 4px 4px 4px #00000040;
+    cursor: pointer;
+
+    &--primary {
+      @extend .assistant-popup__button;
+      background-color: #1e4147;
+      color: white;
+    }
+
+    &--primary:disabled {
+      @extend .assistant-popup__button;
+      background-color: #6b8286;
+      border-color: #6b8286;
+      color: white;
+      cursor: default;
+    }
+
+    &--secondary {
+      @extend .assistant-popup__button;
+      background-color: white;
+      color: #1e4147;
+    }
+  }
+}
+
+/* width */
+::ng-deep .mat-select-panel::-webkit-scrollbar {
+  width: 5px !important;
+}
+
+/* Handle */
+::ng-deep .mat-select-panel::-webkit-scrollbar-thumb {
+  background: #888 !important;
+}
+
+::ng-deep .mat-autocomplete-panel::-webkit-scrollbar {
+  width: 5px !important;
+}
+
+/* Handle */
+::ng-deep .mat-autocomplete-panel::-webkit-scrollbar-thumb {
+  background: #888 !important;
+}

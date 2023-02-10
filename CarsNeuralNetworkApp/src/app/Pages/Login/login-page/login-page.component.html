@@ -1,0 +1,27 @@
+<div class="login-page__container">
+  <div class="card">
+    <img class="card-logo" src="../../../../assets/logo.jpg" />
+    <form [formGroup]="loginFormGroup" class="login-page__form">
+      <input
+        type="text"
+        formControlName="username"
+        placeholder="LOGIN"
+        class="login-input"
+      />
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="HASŁO"
+        class="login-input"
+      />
+    </form>
+    <button
+      class="button--primary"
+      (click)="login()"
+      [disabled]="!loginFormGroup.valid"
+    >
+      ZALOGUJ
+    </button>
+    <button class="button--text" (click)="register()">UTWÓRZ NOWE KONTO</button>
+  </div>
+</div>

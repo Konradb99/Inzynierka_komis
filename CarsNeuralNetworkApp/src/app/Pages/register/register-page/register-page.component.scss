@@ -1,0 +1,19 @@
+@use "../../../shared/styles/buttons";
+@use "../../../shared/styles/inputs";
+@use "../../../shared/styles/cards";
+@use "../../../shared/styles/variables";
+
+.register-page {
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: variables.$negative-top-margin;
+    height: variables.$max-page-height;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+}

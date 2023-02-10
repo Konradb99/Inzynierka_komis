@@ -1,0 +1,45 @@
+<div class="list-element__container">
+  <div class="list-element__img-container">
+    <img class="list-element__img" [src]="car_photo" />
+    <p class="list-element__img-label">{{ car.price }} pln</p>
+  </div>
+  <div class="list-element__data">
+    <div class="list-element__data-part">
+      <p class="list-element__data-header-first-row">MARKA:</p>
+      <p class="list-element__data-content">{{ car.brand }}</p>
+    </div>
+    <div class="list-element__data-part">
+      <p class="list-element__data-header">PRZEBIEG:</p>
+      <p class="list-element__data-content">{{ car.distance }} km</p>
+    </div>
+    <div class="list-element__data-part">
+      <p class="list-element__data-header">POJEMNOŚĆ SILNIKA:</p>
+      <p class="list-element__data-content">{{ car.capacity }} cm&#179;</p>
+    </div>
+    <div class="list-element__data-part">
+      <p class="list-element__data-header-first-row">MODEL:</p>
+      <p class="list-element__data-content">{{ car.model }}</p>
+    </div>
+    <div class="list-element__data-part">
+      <p class="list-element__data-header">SKRZYNIA BIEGÓW:</p>
+      <p class="list-element__data-content">{{ car.gearboxType }}</p>
+    </div>
+    <div class="list-element__data-part">
+      <p class="list-element__data-header">NAPĘD:</p>
+      <p class="list-element__data-content">{{ car.driveType }}</p>
+    </div>
+    <div class="list-element__data-part">
+      <p class="list-element__data-header-first-row">ROK PRODUKCJI:</p>
+      <p class="list-element__data-content">{{ car.productionYear }}</p>
+    </div>
+    <div class="list-element__data-part">
+      <p class="list-element__data-header">RODZAJ PALIWA:</p>
+      <p class="list-element__data-content">{{ car.fuelType }}</p>
+    </div>
+    <div class="list-element__data-part" *ngIf="!isUserGuest">
+      <div (click)="soldCar(car)" class="list-element__sold">SPRZEDAJ</div>
+      <div (click)="removeCar(car)" class="list-element__remove">USUŃ</div>
+    </div>
+  </div>
+</div>
+
